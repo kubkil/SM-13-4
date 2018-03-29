@@ -19,12 +19,16 @@
         "no-unused-vars": "warn",
         "constructor-super": "warn",
         "valid-typeof": "warn",
-        "space-before-blocks": "error",
-        "space-before-function-paren": ["error", {
+        "space-before-blocks": "warn",
+        "space-before-function-paren": ["warn", {
                 "anonymous": "always",
                 "named": "never",
                 "asyncArrow": "always"
             }
-        ]
+        ],
+        "spaced-comment": "warn",
+        "keyword-spacing": ["warn", { "overrides": {
+            "function": { "after": false }
+        } }]
     }
 }

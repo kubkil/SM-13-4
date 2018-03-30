@@ -1,7 +1,7 @@
 const os = require('os');
 
-function calcTime(time) {
-  time = os.uptime();
+function calcTime() {
+  let time = os.uptime();
   let hours = Math.floor(time / 3600);
   time = time - hours * 3600;
   let minutes = Math.floor(time / 60);

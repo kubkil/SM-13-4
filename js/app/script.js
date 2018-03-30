@@ -1,5 +1,6 @@
+const OSinfo = require('../modules/OSinfo');
+console.log('Type: ' + '\n' + '- /exit to quit,' + '\n' + '- /versionNode to show Node version,' + '\n' + '- /sysLang to show system language,' + '\n' + '- /getOSinfo to show system info.')
 process.stdin.setEncoding('utf-8');
-const OSinfo = require('./OSinfo');
 
 process.stdin.on('readable', function () {
   const input = process.stdin.read();
@@ -10,16 +11,15 @@ process.stdin.on('readable', function () {
         process.stdout.write('Quitting app!\n');
         break;
       case '/versionNode':
-        console.log('Node.js version is', process.versions.node, '\n');
+        console.log('Node.js version is ' + process.versions.node + '\n');
         break;
       case '/sysLang':
-        process.stdout.write('System language is', process.env.LANG, '\n');
+        process.stdout.write('System language is ' + process.env.LANG + '\n');
         break;
       case '/versionNodeAndSysLang':
-        process.stdout.write('System language is', process.env.LANG, '\n' + 'Node.js version is', process.versions.node, '\n');
+        process.stdout.write('System language is ' + process.env.LANG, '\n' + 'Node.js version is' + process.versions.node + '\n');
         break;
       case '/getOSinfo':
-        // getOSinfo();
         OSinfo.print();
         break;
       default:

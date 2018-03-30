@@ -1,3 +1,4 @@
+const os = require('os');
 function getOSinfo() {
   let type = os.type();
   if (type === "Darwin") {

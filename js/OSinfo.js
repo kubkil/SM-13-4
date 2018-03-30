@@ -1,4 +1,5 @@
 const os = require('os');
+
 function getOSinfo() {
   let type = os.type();
   if (type === "Darwin") {
@@ -21,3 +22,5 @@ function getOSinfo() {
   console.log('User name:', userInfo.username);
   console.log('Home dir:', userInfo.homedir);
 }
+
+exports.print = getOSinfo;

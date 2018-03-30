@@ -1,4 +1,5 @@
 process.stdin.setEncoding('utf-8');
+const OSinfo = require('./OSinfo');
 
 process.stdin.on('readable', function () {
   const input = process.stdin.read();
@@ -18,7 +19,8 @@ process.stdin.on('readable', function () {
         process.stdout.write('System language is', process.env.LANG, '\n' + 'Node.js version is', process.versions.node, '\n');
         break;
       case '/getOSinfo':
-        getOSinfo();
+        // getOSinfo();
+        OSinfo.print();
         break;
       default:
         process.stderr.write('Wrong instruction!\n');
